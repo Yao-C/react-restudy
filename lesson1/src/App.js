@@ -1,11 +1,11 @@
-import ContextPage from "./pages/ContextPage";
+import AntdFormPage from "../../lesson1/src/pages/AntdFormPage";
+// import MyRCFieldForm from "./pages/MyRCFieldForm";
 
-function App() {
+export default function App(props) {
   return (
-    <div className="App">
-      <ContextPage />
+    <div>
+      <AntdFormPage />
+      {/* <MyRCFieldForm /> */}
     </div>
   );
 }
-
-export default App;
