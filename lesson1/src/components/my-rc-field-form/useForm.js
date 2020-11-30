@@ -61,13 +61,35 @@ class FormStore {
     this.fieldEntities.forEach((entity) => {
       const { name, rules } = entity.props;
 
+      console.log(this.store);
+
       let rule = rules && rules[0];
-      // if(){}
+
+      // Homework, 20201126 暗号：苹果
+      if (
+        rule &&
+        rule.required &&
+        this.store[name] &&
+        this.store[name].length > 0
+      ) {
+        // 成功
+      } else {
+        // 失败
+        err.push({ err: "err" });
+      }
+
+      /*
+      // 讲解
+      let value = this.getFieldValue(name);
+      if (rule && rule.required && (value === undefined || value === "")) {
+        // 失败
+        err.push({
+          [name]: rule.message,
+          value,
+        });
+      }
+      */
     });
-
-    // 成功 err
-
-    // 失败err.push({err: 'err'})
 
     return err;
   };
