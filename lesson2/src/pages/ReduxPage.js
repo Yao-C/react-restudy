@@ -41,6 +41,9 @@ export default class ReduxPage extends Component {
     );
   };
 
+  show = () => store.dispatch({ type: "SHOW" });
+  hide = () => store.dispatch({ type: "HIDE" });
+
   render() {
     return (
       <div>
@@ -49,6 +52,10 @@ export default class ReduxPage extends Component {
         <button onClick={this.add}>add</button>
         <button onClick={this.asyAdd}>asyAdd</button>
         <button onClick={this.promiseMinus}>promiseMinus</button>
+        <br></br>
+        <p>visibility: {store.getState().visibility ? "show" : "hide"}</p>
+        <button onClick={this.show}>Show</button>
+        <button onClick={this.hide}>hide</button>
       </div>
     );
   }

@@ -1,5 +1,5 @@
-import { createStore, applyMiddleware, combineReducers } from "redux";
-// import {createStore} from "../kredux/";
+//import { createStore, applyMiddleware, combineReducers } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "../kredux/";
 // import thunk from "redux-thunk";
 // import logger from "redux-logger";
 import isPromise from "is-promise";
@@ -7,6 +7,7 @@ import { isFSA } from "flux-standard-action";
 
 // 定义修改规则
 function countReducer(state = 0, action) {
+  console.log("countReducer");
   switch (action.type) {
     case "ADD":
       return state + 1;
@@ -17,9 +18,22 @@ function countReducer(state = 0, action) {
   }
 }
 
+// Homework: 测试
+function visibilityReducer(state = true, action) {
+  console.log("visibilityReducer");
+  switch (action.type) {
+    case "SHOW":
+      return true;
+    case "HIDE":
+      return false;
+    default:
+      return state;
+  }
+}
+
 //const store = createStore(countReducer, applyMiddleware(thunk, logger));
 const store = createStore(
-  combineReducers({ count: countReducer }),
+  combineReducers({ visibility: visibilityReducer, count: countReducer }),
   applyMiddleware(promise, thunk, logger)
 );
 
