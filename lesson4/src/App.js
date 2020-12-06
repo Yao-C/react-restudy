@@ -1,18 +1,4 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect,
-  useHistory,
-  useLocation,
-  useRouteMatch,
-  useParams,
-  withRouter,
-  Prompt,
-} from "react-router-dom";
-
 // import {
 //   BrowserRouter as Router,
 //   Route,
@@ -24,8 +10,22 @@ import {
 //   useRouteMatch,
 //   useParams,
 //   withRouter,
-//   Prompt
-// } from "./k-react-router-dom/";
+//   Prompt,
+// } from "react-router-dom";
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Prompt,
+  useHistory,
+  useLocation,
+  useRouteMatch,
+  useParams,
+  withRouter,
+  //Redirect,
+} from "./k-react-router-dom/";
 
 import HomePage from "./pages/HomePage";
 import UserPage from "./pages/UserPage";
