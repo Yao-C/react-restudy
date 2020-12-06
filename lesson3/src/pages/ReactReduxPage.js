@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-//import { bindActionCreators, connect } from "../kReactRedux";
+// import { connect } from "react-redux";
+// import { bindActionCreators } from "redux";
+import { bindActionCreators, connect } from "../kReactRedux";
 
 // hoc 是个函数，接收组件作为参数，返回一个新的组件
 // connect原理 高阶组件（hoc）
