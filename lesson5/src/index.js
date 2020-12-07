@@ -1,11 +1,18 @@
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
+import { Provider } from "react-redux";
+import store from "./store/";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
 
-//yield只能用在generator函数里
-//
+// function 与函数名之间有个*
+// generator函数体内部使用yield表达式，定义不同状态
 // function* helloWorldGenerator() {
 //   yield "hello";
 //   yield "world";
